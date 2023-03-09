@@ -10,7 +10,9 @@ interface BJDProps {
 }
 const ButtonJumpDown = (props : BJDProps) => {
     const { buttonStyle } = useStyle(props.w, props.h, props.scale)
-    return (<button style = {buttonStyle()}>Jump</button>)
+    return (<button onClick = {() => {
+        props.onClick()
+    }} style = {buttonStyle()}>Jump</button>)
 }
 
 export default withContext(ButtonJumpDown)
